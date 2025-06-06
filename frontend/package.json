@@ -8,7 +8,7 @@
     "watch-css": "tailwindcss -i ./src/input.css -o ./src/output.css --watch",
     "serve": "http-server -p 8080 -c-1 --cors",
     "dev": "npm run watch-css & npm run serve",
-    // "test": "cross-env NODE_ENV=test jest --runInBand",
+    "test": "cross-env NODE_ENV=test jest --runInBand",
     "test:watch": "cross-env NODE_ENV=test jest --watch --runInBand",
     "test:coverage": "cross-env NODE_ENV=test jest --coverage --runInBand",
     "test:ci": "cross-env NODE_ENV=test jest --coverage --watchAll=false --runInBand",
@@ -17,7 +17,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "start": "live-server src --port=10000",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    // "test": "echo \"Error: no test specified\" && exit 1"
 },
   },
   "devDependencies": {
