@@ -16,9 +16,7 @@
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "start": "live-server src --port=10000",
-    // "test": "echo \"Error: no test specified\" && exit 1"
-},
+    "start": "live-server src --port=10000"
   },
   "devDependencies": {
     "@babel/core": "^7.23.0",
