@@ -23,4 +23,4 @@ COPY . .
 EXPOSE 10000
 
 # Command to run the application
-CMD ["gunicorn", "--bind", "0.0.0.0:10000", "--workers", "2", "app.py"]
+CMD ["gunicorn", "--bind", "0.0.0.0:10000", "app:app"]
