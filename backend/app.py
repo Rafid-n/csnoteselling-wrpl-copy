@@ -16,12 +16,26 @@ def create_app(testing=False):
         app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
         app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-    # CORS configuration - allow all origins for development
+    # Ambil URL frontend dari environment variable
+    # Jika tidak ada, gunakan '*' untuk mengizinkan semua selama pengembangan lokal
+    frontend_url = os.getenv('FRONTEND_URL', '*') 
+    
+    # Daftar origins untuk CORS
+    # Ini akan mengizinkan semua URL lokal dan URL frontend produksi Anda
+    allowed_origins = [
+        "http://localhost:8080", 
+        "http://127.0.0.1:8080", 
+        "http://localhost:3000"
+    ]
+    if frontend_url != '*':
+        allowed_origins.append(frontend_url)
+
     CORS(app, resources={
         r"/api/*": {
-            "origins": ["http://localhost:8080", "http://127.0.0.1:8080", "http://localhost:3000"],
+            "origins": allowed_origins,
             "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-            "allow_headers": ["Content-Type", "Authorization"]
+            "allow_headers": ["Content-Type", "Authorization"],
+            "supports_credentials": True # Seringkali berguna
         }
     })
 
@@ -149,17 +163,14 @@ def create_app(testing=False):
 
     return app
 
-# Untuk run biasa
+# Buat instance aplikasi di level global agar Gunicorn bisa menemukannya
+app = create_app()
+
+# Blok ini tetap berguna untuk menjalankan server development secara lokal
 if __name__ == '__main__':
-    print("Starting CS Note Selling API...")
-    print("Testing database connection...")
+    print("Starting CS Note Selling API in development mode...")
     
-    if test_connection():
-        print("✅ Database connection successful!")
-    else:
-        print("❌ Database connection failed!")
-    
-    app = create_app()
+    # app.run() akan menggunakan objek 'app' yang sudah dibuat di atas
     app.run(
         debug=True, 
         port=int(os.getenv('FLASK_RUN_PORT', 5000)), 
