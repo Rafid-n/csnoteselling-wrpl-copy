@@ -1,19 +1,15 @@
 const express = require('express');
 const path = require('path');
-const app = express();
 
-// --- PENJELASAN PERUBAHAN #1 ---
-// Kita paksa server untuk menggunakan port 10000 yang diharapkan oleh Railway.
-// process.env.PORT adalah variabel yang secara otomatis diberikan oleh banyak platform hosting.
+const app = express();
 const port = process.env.PORT || 10000;
 
-// Baris ini sudah benar, menyajikan semua file statis.
+// CUKUP DENGAN BARIS INI.
+// Express akan secara cerdas menyajikan semua file dari dalam folder 'public'.
+// Termasuk index.html, output.css, dan semua file di dalam Pages/.
 app.use(express.static(path.join(__dirname, 'public')));
 
-// --- PENJELASAN PERUBAHAN #2 ---
-// Kita tambahkan '0.0.0.0' di sini. Ini sangat penting.
-// Ini memberitahu server untuk menerima koneksi dari luar kontainernya
-// (yaitu dari sistem Railway), bukan hanya dari 'localhost' internal.
+// Perintah listen HARUS berada setelah semua konfigurasi 'app.use' atau 'app.get'.
 app.listen(port, '0.0.0.0', () => {
   console.log(`Server Express berjalan dengan sukses di port ${port}`);
 });
