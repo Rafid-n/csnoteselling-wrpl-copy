@@ -8,7 +8,7 @@ const app = express();
 const port = process.env.PORT || 10000;
 
 // Baris ini sudah benar, menyajikan semua file statis.
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // --- PENJELASAN PERUBAHAN #2 ---
 // Kita tambahkan '0.0.0.0' di sini. Ini sangat penting.
