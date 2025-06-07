@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         localStorage.removeItem('username');
         sessionStorage.removeItem('userSession');
 
-        window.location.href = '../pages/login.html';
+        window.location.href = '../Pages/login.html';
       }
     });
   }

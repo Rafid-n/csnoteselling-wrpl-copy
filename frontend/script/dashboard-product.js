@@ -238,16 +238,16 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (isLoggedIn) {
       // Jika user SUDAH login
       navbarHTML = `
-                <a href="../pages/dashboard-${userRole}.html" class="text-base font-medium text-blue2 hover:text-gray-900">
+                <a href="../Pages/dashboard-${userRole}.html" class="text-base font-medium text-blue2 hover:text-gray-900">
                     Home
                 </a>
-                <a href="../pages/cart.html" class="text-base font-medium text-blue2 hover:text-gray-900">
+                <a href="../Pages/cart.html" class="text-base font-medium text-blue2 hover:text-gray-900">
                     Keranjang
                 </a>
                 <a href="#" class="text-base font-medium text-blue2 hover:text-gray-900">
                     Tentang Kami
                 </a>
-                <a href="../pages/profile.html" class="text-base font-medium text-blue2 hover:text-gray-900 flex items-center">
+                <a href="../Pages/profile.html" class="text-base font-medium text-blue2 hover:text-gray-900 flex items-center">
                     <img src="../assets/images/profile.png" class="h-8 w-8 rounded-full border border-gray-300" alt="Profile">
                 </a>
             `;
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 <a href="#" class="text-base font-medium text-blue2 hover:text-gray-900">
                 Tentang Kami
                 </a>
-                <a href="../pages/login.html" class="px-4 py-1 border border-transparent rounded-4xl shadow-sm text-base font-medium text-white bg-blue2 hover:bg-indigo-700">
+                <a href="../Pages/login.html" class="px-4 py-1 border border-transparent rounded-4xl shadow-sm text-base font-medium text-white bg-blue2 hover:bg-indigo-700">
                     Login
                 </a>
             `;

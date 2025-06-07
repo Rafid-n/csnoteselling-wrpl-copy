@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
       limitedMaterials.forEach((material) => {
         const card = document.createElement('a');
-        card.href = `./pages/product-detail.html?id=${material.material_id}`;
+        card.href = `../Pages/product-detail.html?id=${material.material_id}`;
         card.className =
           'border border-gray-300 rounded-lg p-4 shadow-md transition transform hover:-translate-y-1 hover:shadow-lg bg-white flex flex-col justify-between cursor-pointer no-underline text-black';
 
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       // Perbaiki URL untuk Docker environment
-      window.location.href = `../pages/dashboard-product.html?q=${encodeURIComponent(query)}&course=${encodeURIComponent(selectedCourse)}`;
+      window.location.href = `../Pages/dashboard-product.html?q=${encodeURIComponent(query)}&course=${encodeURIComponent(selectedCourse)}`;
     });
   }
 });
