@@ -15,7 +15,7 @@
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "start": "serve -s . -l 10000",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
@@ -36,6 +36,7 @@
     "tailwindcss": "^4.0.14"
   },
   "dependencies": {
+    "express": "^5.1.0",
     "http-server": "^14.1.1",
     "live-server": "^1.2.2",
     "serve": "^14.2.4"
