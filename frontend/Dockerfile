@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Perintah ini akan membangun file CSS dari Tailwind sekali saja saat build
-RUN npx tailwindcss -i ./src/input.css -o ./src/output.css --minify
+RUN npx tailwindcss -i ./public/src/input.css -o ./public/output.css --minify
 
 # Beritahu Docker bahwa aplikasi akan berjalan di port 10000
 EXPOSE 10000
