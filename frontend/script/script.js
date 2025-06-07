@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', async function () {
   const container = document.getElementById('product-list');
   const loadingScreen = document.getElementById('loading-screen');
 
+  
+  const API_BASE_URL = 'https://csnoteselling-wrpl-copy-production.up.railway.app';
+
   async function fetchMaterials() {
     try {
       // Tampilkan loading

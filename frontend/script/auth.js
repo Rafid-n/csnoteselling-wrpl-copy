@@ -1,4 +1,4 @@
-
+const API_BASE_URL = 'https://csnoteselling-wrpl-copy-production.up.railway.app';
 
 document.addEventListener('DOMContentLoaded', function () {
   const loginForm = document.querySelector('#login-form');
