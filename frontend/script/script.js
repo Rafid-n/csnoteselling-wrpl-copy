@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   const loadingScreen = document.getElementById('loading-screen');
 
   
-  const API_BASE_URL = 'https://csnoteselling-wrpl-copy-production.up.railway.app';
+  
 
   async function fetchMaterials() {
     try {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const filterMatkul = document.getElementById('filter-matkul');
 
   // Gunakan URL yang sama
-  const API_BASE_URL = 'http://localhost:5000';
+  
 
   // Ambil daftar course dari database
   async function fetchCourses() {

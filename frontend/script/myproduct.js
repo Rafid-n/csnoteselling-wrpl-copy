@@ -7,7 +7,7 @@ async function loadWalletBalance() {
     const userId = localStorage.getItem('user_id');
     if (!userId) return;
 
-    const response = await fetch(`http://127.0.0.1:5000/api/wallets/${userId}`);
+    const response = await fetch(`${API_BASE_URL}/api/wallets/${userId}`);
     if (!response.ok) return;
 
     const data = await response.json();
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const loadingScreen = document.getElementById('loading-screen');
   // Tampilkan loading
   loadingScreen.style.display = 'flex';
-  fetch(`http://127.0.0.1:5000/api/materials/seller/${sellerId}`)
+  fetch(`${API_BASE_URL}/api/materials/seller/${sellerId}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error('Gagal mengambil data produk');
