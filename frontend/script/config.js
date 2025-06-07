@@ -1,1 +1,1 @@
-const API_BASE_URL = 'https://csnoteselling-wrpl-copy-production-b3d4.up.railway.app'; 
+const API_BASE_URL = 'https://csnoteselling-wrpl-copy-deploy.up.railway.app'; 
