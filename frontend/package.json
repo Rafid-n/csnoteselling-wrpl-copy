@@ -15,7 +15,7 @@
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "start": "live-server --port=10000",
+    "start": "live-server --port=10000 --host=0.0.0.0 --spa",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
