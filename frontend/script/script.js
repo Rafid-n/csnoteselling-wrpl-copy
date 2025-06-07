@@ -2,9 +2,6 @@ document.addEventListener('DOMContentLoaded', async function () {
   const container = document.getElementById('product-list');
   const loadingScreen = document.getElementById('loading-screen');
 
-  // Gunakan URL yang benar untuk Docker
-  const API_BASE_URL = 'http://localhost:5000';
-
   async function fetchMaterials() {
     try {
       // Tampilkan loading
