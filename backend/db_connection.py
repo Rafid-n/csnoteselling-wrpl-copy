@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Ambil DATABASE_URL dari environment variable
-DATABASE_URL = os.getenv("mysql://root:IIaPSYlidTnxNHsImctJOXbWVXrrUVIA@interchange.proxy.rlwy.net:16682/railway")
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 def parse_database_url(database_url):
     """Parse DATABASE_URL untuk berbagai format"""
