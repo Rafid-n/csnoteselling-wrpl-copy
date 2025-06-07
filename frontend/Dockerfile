@@ -1,27 +1,23 @@
-# frontend/Dockerfile
+# Gunakan base image Node.js versi 18
 FROM node:18-alpine
 
+# Tentukan direktori kerja di dalam kontainer
 WORKDIR /app
 
-# Copy package files first
+# Salin package.json dan package-lock.json terlebih dahulu untuk caching
 COPY package*.json ./
 
-# Install dependencies
+# Install semua dependensi (termasuk express)
 RUN npm install
 
-# Copy application code
+# Salin sisa dari kode aplikasi Anda
 COPY . .
 
-# Create tailwind config if not exists
-RUN if [ ! -f tailwind.config.js ]; then \
-    npx tailwindcss init; \
-    fi
-
-# Build CSS first time
+# Perintah ini akan membangun file CSS dari Tailwind sekali saja saat build
 RUN npx tailwindcss -i ./src/input.css -o ./src/output.css --minify
 
-# Expose port
+# Beritahu Docker bahwa aplikasi akan berjalan di port 10000
 EXPOSE 10000
 
-# Command to serve and watch
-CMD ["sh", "-c", "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch & npx http-server -p 10000 -c-1 --cors"]
+# Perintah final untuk menjalankan aplikasi Anda menggunakan server Express
+CMD ["node", "server.js"]
