@@ -21,7 +21,7 @@ RUN if [ ! -f tailwind.config.js ]; then \
 RUN npx tailwindcss -i ./src/input.css -o ./src/output.css --minify
 
 # Expose port
-EXPOSE 8080
+EXPOSE 10000
 
 # Command to serve and watch
-CMD ["sh", "-c", "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch & npx http-server -p 8080 -c-1 --cors"]
+CMD ["sh", "-c", "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch & npx http-server -p 10000 -c-1 --cors"]
